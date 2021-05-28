@@ -47,10 +47,10 @@
             <h4 class="accordion-item__label">A</h4>
             <div class="accordion-item__container">
               <p>Display total number of cases, deaths and tests per EU country.</p>
-              <form class="form" method="GET" onsubmit="action_A(event)">
+              <form id="formA" class="form" method="GET" onsubmit="action_A(event)">
                 <div class="slot">
                   <label for="country">Country:</label>
-                  <select id="country" name="country">
+                  <select name="country">
                     <option value="ALB">ALB</option>
                     <option value="AND">AND</option>
                     <option value="ARM">ARM</option>
@@ -116,10 +116,10 @@
             <h4 class="accordion-item__label">B</h4>
             <div class="accordion-item__container">
               <p>Show number of cases and deaths in a time period and country.</p>
-              <form class="form" method="GET" onsubmit="action_B(event)">
+              <form id="formB" class="form" method="GET" onsubmit="action_B(event)">
                 <div class="slot">
                   <label for="country">Country:</label>
-                  <select id="country" name="country">
+                  <select name="country">
                     <option value="ALB">ALB</option>
                     <option value="AND">AND</option>
                     <option value="ARM">ARM</option>
@@ -258,26 +258,12 @@
 
       <!-- Results table section -->
       <div class="table-wrapper">
-        <table id="Result">
+        <table id="result">
           <tr>
-            <th>Deaths</th>
-            <th>Cases</th>
-            <th>Test</th>
+            <th>Results</th>
           </tr>
           <tr>
-            <td>Value</td>
-            <td>Value</td>
-            <td>Value</td>
-          </tr>
-          <tr>
-            <td>Value</td>
-            <td>Value</td>
-            <td>Value</td>
-          </tr>
-          <tr>
-            <td>Value</td>
-            <td>Value</td>
-            <td>Value</td>
+            <td>...</td>
           </tr>
         </table>
       </div>
