@@ -46,37 +46,205 @@
           <article class="accordion-item accordion-active" data-actab-group="0" data-actab-id="0">
             <h4 class="accordion-item__label">A</h4>
             <div class="accordion-item__container">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, deserunt minima? Ut facere minus, ipsa dolore animi quis alias eos, porro corporis quod esse quidem. Maxime a aperiam perspiciatis architecto?</p>
+              <p>Display total number of cases, deaths and tests per EU country.</p>
+              <form class="form" method="GET" onsubmit="action_A(event)">
+                <div class="slot">
+                  <label for="country">Country:</label>
+                  <select id="country" name="country">
+                    <option value="ALB">ALB</option>
+                    <option value="AND">AND</option>
+                    <option value="ARM">ARM</option>
+                    <option value="AUT">AUT</option>
+                    <option value="AZE">AZE</option>
+                    <option value="BEL">BEL</option>
+                    <option value="BGR">BGR</option>
+                    <option value="BIH">BIH</option>
+                    <option value="BLR">BLR</option>
+                    <option value="CHE">CHE</option>
+                    <option value="CYP">CYP</option>
+                    <option value="CZE">CZE</option>
+                    <option value="DEU">DEU</option>
+                    <option value="DNK">DNK</option>
+                    <option value="ESP">ESP</option>
+                    <option value="EST">EST</option>
+                    <option value="FIN">FIN</option>
+                    <option value="FRA">FRA</option>
+                    <option value="FRO">FRO</option>
+                    <option value="GBR">GBR</option>
+                    <option value="GEO">GEO</option>
+                    <option value="GGY">GGY</option>
+                    <option value="GIB">GIB</option>
+                    <option value="GRC">GRC</option>
+                    <option value="HRV">HRV</option>
+                    <option value="HUN">HUN</option>
+                    <option value="IMN">IMN</option>
+                    <option value="IRL">IRL</option>
+                    <option value="ISL">ISL</option>
+                    <option value="ITA">ITA</option>
+                    <option value="JEY">JEY</option>
+                    <option value="LIE">LIE</option>
+                    <option value="LTU">LTU</option>
+                    <option value="LUX">LUX</option>
+                    <option value="LVA">LVA</option>
+                    <option value="MCO">MCO</option>
+                    <option value="MDA">MDA</option>
+                    <option value="MKD">MKD</option>
+                    <option value="MLT">MLT</option>
+                    <option value="MNE">MNE</option>
+                    <option value="NLD">NLD</option>
+                    <option value="NOR">NOR</option>
+                    <option value="POL">POL</option>
+                    <option value="PRT">PRT</option>
+                    <option value="ROU">ROU</option>
+                    <option value="RUS">RUS</option>
+                    <option value="SMR">SMR</option>
+                    <option value="SRB">SRB</option>
+                    <option value="SVK">SVK</option>
+                    <option value="SVN">SVN</option>
+                    <option value="SWE">SWE</option>
+                    <option value="TUR">TUR</option>
+                    <option value="UKR">UKR</option>
+                    <option value="VAT">VAT</option>
+                    <option value="XKX">XKX</option>
+                  </select>
+                </div>
+                <button class="btn-submit" type="submit" >Submit</button>
+              </form>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="1">
             <h4 class="accordion-item__label">B</h4>
             <div class="accordion-item__container">
-              <p>reprehenderit temporibus, assumenda cupiditate consequatur soluta odit ex repudiandae delectus cumque, provident hic sed quod? Quis, nam. Similique eaque quae vel recusandae expedita qui sint fugiat, nisi assumenda et ex molestiae atque deleniti magni, ipsam libero!</p>
+              <p>Show number of cases and deaths in a time period and country.</p>
+              <form class="form" method="GET" onsubmit="action_B(event)">
+                <div class="slot">
+                  <label for="country">Country:</label>
+                  <select id="country" name="country">
+                    <option value="ALB">ALB</option>
+                    <option value="AND">AND</option>
+                    <option value="ARM">ARM</option>
+                    <option value="AUT">AUT</option>
+                    <option value="AZE">AZE</option>
+                    <option value="BEL">BEL</option>
+                    <option value="BGR">BGR</option>
+                    <option value="BIH">BIH</option>
+                    <option value="BLR">BLR</option>
+                    <option value="CHE">CHE</option>
+                    <option value="CYP">CYP</option>
+                    <option value="CZE">CZE</option>
+                    <option value="DEU">DEU</option>
+                    <option value="DNK">DNK</option>
+                    <option value="ESP">ESP</option>
+                    <option value="EST">EST</option>
+                    <option value="FIN">FIN</option>
+                    <option value="FRA">FRA</option>
+                    <option value="FRO">FRO</option>
+                    <option value="GBR">GBR</option>
+                    <option value="GEO">GEO</option>
+                    <option value="GGY">GGY</option>
+                    <option value="GIB">GIB</option>
+                    <option value="GRC">GRC</option>
+                    <option value="HRV">HRV</option>
+                    <option value="HUN">HUN</option>
+                    <option value="IMN">IMN</option>
+                    <option value="IRL">IRL</option>
+                    <option value="ISL">ISL</option>
+                    <option value="ITA">ITA</option>
+                    <option value="JEY">JEY</option>
+                    <option value="LIE">LIE</option>
+                    <option value="LTU">LTU</option>
+                    <option value="LUX">LUX</option>
+                    <option value="LVA">LVA</option>
+                    <option value="MCO">MCO</option>
+                    <option value="MDA">MDA</option>
+                    <option value="MKD">MKD</option>
+                    <option value="MLT">MLT</option>
+                    <option value="MNE">MNE</option>
+                    <option value="NLD">NLD</option>
+                    <option value="NOR">NOR</option>
+                    <option value="POL">POL</option>
+                    <option value="PRT">PRT</option>
+                    <option value="ROU">ROU</option>
+                    <option value="RUS">RUS</option>
+                    <option value="SMR">SMR</option>
+                    <option value="SRB">SRB</option>
+                    <option value="SVK">SVK</option>
+                    <option value="SVN">SVN</option>
+                    <option value="SWE">SWE</option>
+                    <option value="TUR">TUR</option>
+                    <option value="UKR">UKR</option>
+                    <option value="VAT">VAT</option>
+                    <option value="XKX">XKX</option>
+                  </select>
+                </div>
+                <div class="slot">
+                  <label for="start">Start date:</label>
+                  <input type="date" name="period-start" value="2019-07-22">
+                </div>
+                <div class="slot">
+                  <label for="start">End date:</label>
+                  <input type="date" name="period-end" value="2020-07-22">
+                </div>
+                <button class="btn-submit" type="submit">Submit</button>
+              </form>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="2">
             <h4 class="accordion-item__label">C</h4>
             <div class="accordion-item__container">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, deserunt minima? Ut facere minus, ipsa dolore animi quis alias eos, porro corporis quod esse quidem. Maxime a aperiam perspiciatis architecto?</p>
+              <p>Display countries with cases above one threshold over a period of time.</p>
+              <form class="form" method="GET" onsubmit="action_C(event)">
+                <div class="slot">
+                  <label for="threshold">Threshold:</label>
+                  <input type="number" name="threshold">
+                </div>
+                <div class="slot">
+                  <label for="start">Start date:</label>
+                  <input type="date" name="period-start" value="2019-07-22">
+                </div>
+                <div class="slot">
+                  <label for="start">End date:</label>
+                  <input type="date" name="period-end" value="2020-07-22">
+                </div>
+                <button class="btn-submit" type="submit">Submit</button>
+              </form>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="3">
             <h4 class="accordion-item__label">D</h4>
             <div class="accordion-item__container">
-              <p>psum dolor sit amet, consectetur adipisicing elit. Voluptates, deserunt minima? Ut facere minus, ipsa dolore</p>
+              <p>Display the top-10 weeks with the highest test rates per population for each EU country.</p>
+              <div class="form">
+                <p class="slot--text">View the top-10 weeks</p>
+                <button class="btn-submit" onclick="action_D(event)">Submit</button>
+              </div>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="4">
             <h4 class="accordion-item__label">E</h4>
             <div class="accordion-item__container">
-              <p>aborum similique facere quae. Quo cupiditate ad iste qui aliquam quibusdam quod, ut doloremque ipsa quas soluta, sapiente possimus, tempora rerum ab nesciunt vitae molestiae dolor earum illum repudiandae! Voluptas sed, soluta facere nisi perferendis cupiditate! Dicta et praesentium non ab, quod commodi, illo saepe accusantium tempora autem eos nemo. Animi, pariatur placeat laudantium dolorib!</p>
+              <p>Display the number of weeks that each EU country has been in the top-10 countries with the most cases.</p>
+              <div class="form">
+                <p class="slot--text">View period in weeks</p>
+                <button class="btn-submit" onclick="action_E(event)">Submit</button>
+              </div>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="5">
             <h4 class="accordion-item__label">F</h4>
             <div class="accordion-item__container">
-              <p>aborum similique facere quae. Quo cupiditate ad iste qui aliquam quibusdam quod, ut doloremque ipsa quas soluta, sapiente possimus, tempora rerum ab nesciunt vitae molestiae dolor earum illum repudiandae! Voluptas sed, soluta facere nisi perferendis cupiditate! Dicta et praesentium non ab, quod commodi, illo saepe accusantium tempora autem eos nemo. Animi, pariatur placeat laudantium dolorib!</p>
+              <p>Display pairs of countries with very close numbers of cases or deaths within a time period given.</p>
+              <form class="form" method="GET" onsubmit="action_F(event)">
+                <div class="slot">
+                  <label for="start">Start date:</label>
+                  <input type="date" name="period-start" value="2019-07-22">
+                </div>
+                <div class="slot">
+                  <label for="start">End date:</label>
+                  <input type="date" name="period-end" value="2020-07-22">
+                </div>
+                <button class="btn-submit" type="submit">Submit</button>
+              </form>
             </div>
           </article>
           <article class="accordion-item" data-actab-group="0" data-actab-id="6">
@@ -119,6 +287,6 @@
 
 
     <!-- Scripts -->
-    <script src="static/js/main.js"></script>
+    <script src="static/js/app.js"></script>
   </body>
 </html>

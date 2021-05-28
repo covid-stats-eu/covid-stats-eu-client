@@ -39,3 +39,14 @@ labels.forEach(function(label) {
 tabs.forEach(function(tab) {
 	tab.addEventListener("click", toggleShow);
 });
+
+
+const action_A = (event) => {
+  event.preventDefault()
+  const queryString = window.location.search
+  
+  fetch(`http://localhost:3000/activity/getAllByCountry${queryString}`)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => alert(err))
+}
