@@ -119,3 +119,35 @@ const action_B = (event) => {
     })
     .catch(err => alert(err))
 }
+
+// Action E
+const action_E = (event) => {
+  event.preventDefault()
+  
+  // Get Elements
+  const table = document.getElementById("result")
+  const form = document.getElementById("formE")
+  
+  // Construct url
+  const url = "http://localhost:3000/activity/getNumberOfTopTenWeek"
+
+  // Request
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      let tableStr = `<tr>
+      <th>Country</th>
+      <th>Number of Weeks</th>\
+      </tr>`
+      tableStr += data.map( item => {
+        return (
+          `<tr>\
+          <td>${item["code"]}</td>\
+          <td>${item["numberOfWeeks"]}</td>\
+          </tr>`
+        )
+      }).join('')
+      table.innerHTML = tableStr
+    })
+    .catch(err => alert(err))
+}
