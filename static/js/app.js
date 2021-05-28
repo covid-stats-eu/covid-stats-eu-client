@@ -162,17 +162,53 @@ const action_C = (event) => {
     .catch(err => alert(err));
 }
 
+// Action D
+const action_D = (event) => {
+  event.preventDefault();
+
+  // Get Elements
+  const table = document.getElementById("result");
+
+  const form = document.getElementById("formD");
+
+  // Construct url
+  const url = "http://localhost:3000/country/getTop10Weeks";
+
+  // Request
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    let tableStr = `<tr>
+    <th>Country</th>
+    <th>Year week</th>
+    <th>Percent</th>
+    </tr>`
+    tableStr += data.map(item => {
+      return (
+        `<tr>
+        <td>${item["code"]}</td>\
+        <td>${item["year_week"]}</td>\
+        <td>${item["percent"]}</td>\
+        </tr>`
+      )
+    }).join('')
+      table.innerHTML = tableStr
+  })
+  .catch(err => alert(err))
+}
+
 // Action E
 const action_E = (event) => {
-event.preventDefault();
+  event.preventDefault();
 
-// Get Elements
-const table = document.getElementById("result");
+  // Get Elements
+  const table = document.getElementById("result");
 
-const form = document.getElementById("formE");
+  const form = document.getElementById("formE");
 
-// Construct url
-const url = "http://localhost:3000/activity/getNumberOfTopTenWeek";
+  // Construct url
+  const url = "http://localhost:3000/activity/getNumberOfTopTenWeek";
 
   // Request
   fetch(url)
