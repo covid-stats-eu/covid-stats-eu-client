@@ -69,7 +69,6 @@ const action_A = (event) => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data[0])
       table.innerHTML = `<tr>
             <th>Deaths</th>
             <th>Cases</th>\
@@ -107,7 +106,6 @@ const action_B = (event) => {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       table.innerHTML = `<tr>
             <th>Deaths</th>
             <th>Cases</th>\
@@ -120,34 +118,79 @@ const action_B = (event) => {
     .catch(err => alert(err))
 }
 
-// Action E
-const action_E = (event) => {
-  event.preventDefault()
+
+// Action C
+const action_C = (event) => {
+  event.preventDefault();
   
   // Get Elements
   const table = document.getElementById("result")
-  const form = document.getElementById("formE")
+
+  const form = document.getElementById("formC")
+  const fd = new FormData(form);
   
+  // Construct url parameters
+  const params = new URLSearchParams({
+    cases:  fd.get("threshold"),
+    start:    fd.get("period-start"),
+    end:      fd.get("period-end"),
+  }); 
+
   // Construct url
-  const url = "http://localhost:3000/activity/getNumberOfTopTenWeek"
+  const url = "http://localhost:3000/country/getByCases?" + params;
 
   // Request
   fetch(url)
     .then(response => response.json())
     .then(data => {
       let tableStr = `<tr>
-      <th>Country</th>
-      <th>Number of Weeks</th>\
-      </tr>`
-      tableStr += data.map( item => {
+          <th>Code</th>
+          <th>Country</th>
+          <th>Population</th>
+        </tr>`
+      tableStr += data.map(item => {
         return (
-          `<tr>\
-          <td>${item["code"]}</td>\
-          <td>${item["numberOfWeeks"]}</td>\
+          `<tr>
+          <td>${item["code"]}</td>
+          <td>${item["name"]}</td>
+          <td>${item["population"]}</td>
           </tr>`
         )
       }).join('')
       table.innerHTML = tableStr
     })
-    .catch(err => alert(err))
+    .catch(err => alert(err));
+}
+
+// Action E
+const action_E = (event) => {
+event.preventDefault();
+
+// Get Elements
+const table = document.getElementById("result");
+
+const form = document.getElementById("formE");
+
+// Construct url
+const url = "http://localhost:3000/activity/getNumberOfTopTenWeek";
+
+  // Request
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    let tableStr = `<tr>
+    <th>Country</th>
+    <th>Number of Weeks</th>\
+    </tr>`
+    tableStr += data.map( item => {
+      return (
+        `<tr>\
+        <td>${item["code"]}</td>\
+        <td>${item["numberOfWeeks"]}</td>\
+        </tr>`
+      )
+    }).join('')
+      table.innerHTML = tableStr
+  })
+  .catch(err => alert(err))
 }
