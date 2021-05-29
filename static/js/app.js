@@ -273,7 +273,7 @@ const action_F = (event) => {
   .catch(err => alert(err))
 }
 
-// Action F
+// Action G
 const action_G = (event) => {
   event.preventDefault();
 
