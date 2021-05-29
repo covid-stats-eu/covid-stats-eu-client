@@ -250,7 +250,86 @@
           <article class="accordion-item" data-actab-group="0" data-actab-id="6">
             <h4 class="accordion-item__label">G</h4>
             <div class="accordion-item__container">
-              <p>aborum similique facere quae. Quo cupiditate ad iste qui aliquam quibusdam quod, ut doloremque ipsa quas soluta, sapiente possimus, tempora rerum ab nesciunt vitae molestiae dolor earum illum repudiandae! Voluptas sed, soluta facere nisi perferendis cupiditate! Dicta et praesentium non ab, quod commodi, illo saepe accusantium tempora autem eos nemo. Animi, pariatur placeat laudantium dolorib!</p>
+              <p>Insert new data for a country at specific week. (date will be converted to the corresponding week number)</p>
+              <form id="formG" class="form" method="POST" onsubmit="action_G(event)">
+                <div class="slot">
+                  <label for="country">Country:</label>
+                  <select name="country">
+                    <option value="ALB">ALB</option>
+                    <option value="AND">AND</option>
+                    <option value="ARM">ARM</option>
+                    <option value="AUT">AUT</option>
+                    <option value="AZE">AZE</option>
+                    <option value="BEL">BEL</option>
+                    <option value="BGR">BGR</option>
+                    <option value="BIH">BIH</option>
+                    <option value="BLR">BLR</option>
+                    <option value="CHE">CHE</option>
+                    <option value="CYP">CYP</option>
+                    <option value="CZE">CZE</option>
+                    <option value="DEU">DEU</option>
+                    <option value="DNK">DNK</option>
+                    <option value="ESP">ESP</option>
+                    <option value="EST">EST</option>
+                    <option value="FIN">FIN</option>
+                    <option value="FRA">FRA</option>
+                    <option value="FRO">FRO</option>
+                    <option value="GBR">GBR</option>
+                    <option value="GEO">GEO</option>
+                    <option value="GGY">GGY</option>
+                    <option value="GIB">GIB</option>
+                    <option value="GRC">GRC</option>
+                    <option value="HRV">HRV</option>
+                    <option value="HUN">HUN</option>
+                    <option value="IMN">IMN</option>
+                    <option value="IRL">IRL</option>
+                    <option value="ISL">ISL</option>
+                    <option value="ITA">ITA</option>
+                    <option value="JEY">JEY</option>
+                    <option value="LIE">LIE</option>
+                    <option value="LTU">LTU</option>
+                    <option value="LUX">LUX</option>
+                    <option value="LVA">LVA</option>
+                    <option value="MCO">MCO</option>
+                    <option value="MDA">MDA</option>
+                    <option value="MKD">MKD</option>
+                    <option value="MLT">MLT</option>
+                    <option value="MNE">MNE</option>
+                    <option value="NLD">NLD</option>
+                    <option value="NOR">NOR</option>
+                    <option value="POL">POL</option>
+                    <option value="PRT">PRT</option>
+                    <option value="ROU">ROU</option>
+                    <option value="RUS">RUS</option>
+                    <option value="SMR">SMR</option>
+                    <option value="SRB">SRB</option>
+                    <option value="SVK">SVK</option>
+                    <option value="SVN">SVN</option>
+                    <option value="SWE">SWE</option>
+                    <option value="TUR">TUR</option>
+                    <option value="UKR">UKR</option>
+                    <option value="VAT">VAT</option>
+                    <option value="XKX">XKX</option>
+                  </select>
+                </div>
+                <div class="slot">
+                  <label for="start">Date:</label>
+                  <input type="date" name="date" value="2021-07-01">
+                </div>
+                <div class="slot">
+                  <label for="cases">Cases</label>
+                  <input type="number" name="cases">
+                </div>
+                <div class="slot">
+                  <label for="deaths">Deaths</label>
+                  <input type="number" name="deaths">
+                </div>
+                <div class="slot">
+                  <label for="tests">Tests</label>
+                  <input type="number" name="tests" value="0">
+                </div>
+                <button class="btn-submit" type="submit">Submit</button>
+              </form>
             </div>
           </article>
         </section>

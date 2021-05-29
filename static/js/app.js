@@ -272,3 +272,43 @@ const action_F = (event) => {
   })
   .catch(err => alert(err))
 }
+
+// Action F
+const action_G = (event) => {
+  event.preventDefault();
+
+  // Get Elements
+  const table = document.getElementById("result");
+
+  const form = document.getElementById("formG");
+  const fd = new FormData(form);
+  
+  // Construct url parameters
+  const params = {
+    cases:  fd.get("cases"),
+    deaths: fd.get("deaths"),
+    tests:  fd.get("tests"),
+    date: fd.get("date"),
+    country:  fd.get("country"),
+  }
+
+  // Request
+  fetch("http://localhost:3000/activity/addData", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  })
+  .then(response => 
+    response.json()
+  )
+  .then(data => {
+    table.innerHTML = `<tr>
+    <th>Result</th>\
+    </tr>\
+    <td>${data}</td>\
+    </tr>`
+  })
+  .catch(err => alert(err))
+}
