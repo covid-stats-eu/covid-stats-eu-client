@@ -223,6 +223,7 @@ tr:nth-child(even) {
 }
 
 .btn-submit {
+  position: relative;
   background-color: var(--clr-extra);
   border: none;
   color: white;
@@ -238,6 +239,30 @@ tr:nth-child(even) {
   filter: brightness(1.6);
 }
 
+.loading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  background-color: inherit;
+  width: 12px;
+  height: 4px;  
+  x-transition: all 1s ease-in-out;
+  animation: ani 1.7s infinite;
+}
+
+
+@keyframes ani {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
 /* Responsive */
 @media (min-width: 600px) {
   .navigation {

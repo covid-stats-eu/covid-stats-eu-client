@@ -54,6 +54,11 @@ const action_A = (event) => {
   const form = document.getElementById("formA")
   const fd = new FormData(form);
   
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  console.log(loader)
+  loader.classList.add("loading")
+
   // Get data
   const countryParam = fd.get("country")
   
@@ -79,8 +84,14 @@ const action_A = (event) => {
             <td>${data[0]["cases"]}</td>\
             <td>${data[0]["tests"]}</td>\
           </tr>`
+      // stop loading
+      loader.classList.remove("loading")
     })
-    .catch(err => alert(err))
+    .catch(err => {
+      // stop loading
+      loader.classList.remove("loading")
+      alert(err)
+    })
 }
 
 // Action B
@@ -92,6 +103,10 @@ const action_B = (event) => {
   const form = document.getElementById("formB")
   const fd = new FormData(form);
   
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
+
   // Construct url parameters
   const params = new URLSearchParams({
     country:  fd.get("country"),
@@ -114,8 +129,14 @@ const action_B = (event) => {
             <td>${data[0]["deaths"]}</td>\
             <td>${data[0]["cases"]}</td>\
           </tr>`
+      // stop loading
+      loader.classList.remove("loading")
     })
-    .catch(err => alert(err))
+    .catch(err => {
+      // stop loading
+      loader.classList.remove("loading")
+      alert(err)
+    })
 }
 
 
@@ -129,6 +150,10 @@ const action_C = (event) => {
   const form = document.getElementById("formC")
   const fd = new FormData(form);
   
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
+
   // Construct url parameters
   const params = new URLSearchParams({
     cases:  fd.get("threshold"),
@@ -158,8 +183,14 @@ const action_C = (event) => {
         )
       }).join('')
       table.innerHTML = tableStr
+      // stop loading
+      loader.classList.remove("loading")
     })
-    .catch(err => alert(err));
+    .catch(err => {
+      // stop loading
+      loader.classList.remove("loading")
+      alert(err)
+    });
 }
 
 // Action D
@@ -170,6 +201,10 @@ const action_D = (event) => {
   const table = document.getElementById("result");
 
   const form = document.getElementById("formD");
+
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
 
   // Construct url
   const url = "http://localhost:3000/country/getTop10Weeks";
@@ -193,9 +228,15 @@ const action_D = (event) => {
         </tr>`
       )
     }).join('')
-      table.innerHTML = tableStr
+    table.innerHTML = tableStr
+    // stop loading
+    loader.classList.remove("loading")
   })
-  .catch(err => alert(err))
+  .catch(err => {
+    // stop loading
+    loader.classList.remove("loading")
+    alert(err)
+  })
 }
 
 // Action E
@@ -206,6 +247,10 @@ const action_E = (event) => {
   const table = document.getElementById("result");
 
   const form = document.getElementById("formE");
+  
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
 
   // Construct url
   const url = "http://localhost:3000/activity/getNumberOfTopTenWeek";
@@ -227,20 +272,30 @@ const action_E = (event) => {
       )
     }).join('')
       table.innerHTML = tableStr
+
+    // stop loading
+    loader.classList.remove("loading")
   })
-  .catch(err => alert(err))
+  .catch(err => {
+    // stop loading
+    loader.classList.remove("loading")
+    alert(err)
+  })
 }
 
 // Action F
 const action_F = (event) => {
   event.preventDefault();
-
   // Get Elements
   const table = document.getElementById("result");
 
   const form = document.getElementById("formF");
   const fd = new FormData(form);
-  
+
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
+
   // Construct url parameters
   const params = new URLSearchParams({
     start:    fd.get("period-start"),
@@ -269,20 +324,30 @@ const action_F = (event) => {
       )
     }).join('')
       table.innerHTML = tableStr
+    
+    // stop loading
+    loader.classList.remove("loading")
   })
-  .catch(err => alert(err))
+  .catch(err => {
+    // stop loading
+    loader.classList.remove("loading")
+    alert(err)
+  })
 }
 
 // Action G
 const action_G = (event) => {
   event.preventDefault();
-
   // Get Elements
   const table = document.getElementById("result");
 
   const form = document.getElementById("formG");
   const fd = new FormData(form);
   
+  // start loading
+  const loader = form.getElementsByClassName("btn-submit")[0]
+  loader.classList.add("loading")
+
   // Construct url parameters
   const params = {
     cases:  fd.get("cases"),
@@ -309,6 +374,13 @@ const action_G = (event) => {
     </tr>\
     <td>${data}</td>\
     </tr>`
+    
+    // stop loading
+    loader.classList.remove("loading")
   })
-  .catch(err => alert(err))
+  .catch(err => {
+    // stop loading
+    loader.classList.remove("loading")
+    alert(err)
+  })
 }
