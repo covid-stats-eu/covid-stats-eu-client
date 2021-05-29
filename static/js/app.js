@@ -230,3 +230,45 @@ const action_E = (event) => {
   })
   .catch(err => alert(err))
 }
+
+// Action F
+const action_F = (event) => {
+  event.preventDefault();
+
+  // Get Elements
+  const table = document.getElementById("result");
+
+  const form = document.getElementById("formF");
+  const fd = new FormData(form);
+  
+  // Construct url parameters
+  const params = new URLSearchParams({
+    start:    fd.get("period-start"),
+    end:      fd.get("period-end"),
+  }); 
+
+  // Construct url
+  const url = "http://localhost:3000/activity/getCountryPairs?" + params;
+
+  // Request
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    let tableStr = `<tr>
+    <th>Country Pair</th>\
+    <th>Cases</th>\
+    <th>Deaths</th>\
+    </tr>`
+    tableStr += data.map( item => {
+      return (
+        `<tr>\
+        <td>${item["A_code"]} - ${item["B_code"]}</td>\
+        <td>${item["A_code"]}: ${item["A_cases"]} <br> ${item["B_code"]}: ${item["B_cases"]}</td>\
+        <td>${item["A_code"]}: ${item["A_deaths"]} <br> ${item["B_code"]}: ${item["B_deaths"]}</td>\
+        </tr>`
+      )
+    }).join('')
+      table.innerHTML = tableStr
+  })
+  .catch(err => alert(err))
+}
