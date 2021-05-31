@@ -196,7 +196,7 @@
               <form id="formC" class="form" method="GET" onsubmit="action_C(event)">
                 <div class="slot">
                   <label for="threshold">Threshold:</label>
-                  <input type="number" name="threshold">
+                  <input type="number" name="threshold" min="0" required>
                 </div>
                 <div class="slot">
                   <label for="start">Start date:</label>
@@ -318,15 +318,15 @@
                 </div>
                 <div class="slot">
                   <label for="cases">Cases</label>
-                  <input type="number" name="cases">
+                  <input type="number" name="cases" min="0" required>
                 </div>
                 <div class="slot">
                   <label for="deaths">Deaths</label>
-                  <input type="number" name="deaths">
+                  <input type="number" name="deaths" min="0" required>
                 </div>
                 <div class="slot">
                   <label for="tests">Tests</label>
-                  <input type="number" name="tests" value="0">
+                  <input type="number" name="tests" value="0" min="0" required>
                 </div>
                 <button class="btn-submit" type="submit">Submit</button>
               </form>
