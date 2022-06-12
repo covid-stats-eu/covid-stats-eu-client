@@ -23,4 +23,4 @@ Open `index.html` with your browser of choice.
 ## Authors
 
 - [Dimitris Pramateftakis](https://github.com/dimpram)
-- [Alexandros Rigas](https://github.com/Rigas-A)
+- [Alexandros Rigas](https://github.com/RigasAlex)
